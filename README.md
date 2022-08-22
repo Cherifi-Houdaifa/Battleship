@@ -1,2 +1,3 @@
 # Battleship
-A Battleship game using Html Css and Javascript
+
+### A Battleship game using Html Css and Javascript
