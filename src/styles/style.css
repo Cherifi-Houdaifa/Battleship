@@ -12,8 +12,8 @@ main {
     align-items: center;
 }
 div.board {
-    height: 500px;
-    width: 500px;
+    height: 40vw;
+    width: 40vw;
     outline-style: solid;
     outline-width: 2px;
     outline-color: black;
@@ -26,8 +26,55 @@ div.cells {
 
 div.cell {
     outline-style: solid;
-    outline-width: 2px;
+    outline-width: 1px;
     outline-color: black;
-    width: 50px;
-    height: 50px;
+    width: 4vw;
+    height: 4vw;
+    user-select: none;
+    cursor: pointer;
+}
+.water {
+    background-color: rgb(73, 167, 211);
+    cursor: default !important;
+}
+.hit {
+    background-color: rgb(243, 71, 71) !important;
+    cursor: default !important;
+}
+.ship {
+    background-color: rgb(46, 46, 46);
+    cursor: default !important;
+}
+.game-end-popup {
+    display: none;
+    background-color: rgb(46, 46, 46);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    height: 30vw;
+}
+.game-end-popup h1 {
+    color: white;
+    text-align: center;
+}
+.game-end-popup .btn {
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.btn input {
+    background-color: rgb(141, 141, 141);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+.show {
+    display: block !important;
+}
+.hide {
+    display: none !important;
 }

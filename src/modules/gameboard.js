@@ -1,5 +1,3 @@
-import Ship from "./ship";
-
 class Gameboard {
     constructor() {
         // create an array that represents each coordinate on the grid
@@ -65,6 +63,9 @@ class Gameboard {
         if (this.coordinates[coords[1]][coords[0]] === null) {
             // "w" means there is water
             this.coordinates[coords[1]][coords[0]] = "w";
+            return "w";
+        } else if (this.coordinates[coords[1]][coords[0]] === "w") {
+            console.log("hi")
         } else {
             const id = this.coordinates[coords[1]][coords[0]];
             const shipObj = this.ships[id];
@@ -74,7 +75,6 @@ class Gameboard {
             } else {
                 var hitPos = coords[1] - shipObj.coords[1];
             }
-            console.log(hitPos);
             shipObj.ship.hit(hitPos);
             return true;
         }
@@ -82,7 +82,7 @@ class Gameboard {
     // return true if all of the ships are sunk else false
     areSunk() {
         for (let i = 0; i < this.ships.length; i++) {
-            if (!this.ships[0].ship.isSunk()) {
+            if (!this.ships[i].ship.isSunk()) {
                 return false;
             }
         }
@@ -90,4 +90,4 @@ class Gameboard {
     }
 }
 
-export default Gameboard;
+export { Gameboard };
