@@ -1,5 +1,5 @@
 class Ship {
-    constructor(length, Xaxis=true) {
+    constructor(length, Xaxis = true) {
         this.length = length;
 
         // create an array of length this.length with all of its values set to false
@@ -14,19 +14,19 @@ class Ship {
         this.sunk = false;
         this.Xaxis = Xaxis;
     }
-    hit (pos) {
+    hit(pos) {
         if (pos > this.hits.length || pos < 0) {
             throw Error("Invalid Position");
         }
         this.hits[pos] = true;
-
     }
     isSunk() {
         for (let i = 0; i < this.hits.length; i++) {
             if (!this.hits[i]) {
-                return false
-            } 
+                return false;
+            }
         }
+        this.shunk = true;
         return true;
     }
 }
